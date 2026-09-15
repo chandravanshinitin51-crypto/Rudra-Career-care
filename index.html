@@ -1,42 +1,174 @@
-<!doctype html>
-<html  
+  align-items:center
+}<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Rudra Career Care | Admissions & Career Guidance</title>
+
 <meta name="description" content="Rudra Career Care - University admissions and career guidance.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:#10233f;background:#f7faff}
-a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e7edf5}.navin{max-width:1180px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:21px;font-weight:800;color:#123f83}.brand span{color:#f28c28}.links{display:flex;gap:24px;font-size:14px;font-weight:600}.btn{background:#1260c9;color:white;padding:12px 18px;border-radius:10px;border:0;font-weight:700;cursor:pointer}.hero{background:linear-gradient(135deg,#0c3978,#1268d4);color:#fff}.heroin{max-width:1180px;margin:auto;padding:72px 20px 78px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.eyebrow{display:inline-block;background:#ffffff1c;border:1px solid #ffffff35;padding:7px 11px;border-radius:99px;font-size:12px;font-weight:700}.hero h1{font-size:48px;line-height:1.08;margin:18px 0}.hero p{font-size:17px;line-height:1.7;color:#dcecff;max-width:650px}.heroCard{background:#fff;color:#10233f;border-radius:20px;padding:26px;box-shadow:0 20px 60px #001f4d55}.heroCard h3{margin-top:0}.field{width:100%;padding:13px;border:1px solid #d8e0eb;border-radius:9px;margin:6px 0 12px;font:inherit}.section{max-width:1180px;margin:auto;padding:62px 20px}.section h2{text-align:center;font-size:30px;margin:0 0 10px}.sub{text-align:center;color:#64748b;margin:0 auto 32px;max-width:650px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid #e6edf6;border-radius:16px;padding:22px;box-shadow:0 8px 25px #163a6410}.card h3{margin:0 0 8px}.pill{display:inline-block;background:#edf5ff;color:#1260c9;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:700}.why{background:#eef6ff}.why .card{box-shadow:none}.contact{background:#0c3978;color:#fff}.contact .sub{color:#dcecff}.contactBox{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}.wa{background:#20a85a}.footer{padding:25px 20px;text-align:center;background:#082c60;color:#cbdcf2;font-size:13px}.float{position:fixed;right:18px;bottom:18px;background:#20a85a;color:#fff;padding:14px 18px;border-radius:99px;font-weight:800;box-shadow:0 8px 30px #0003;z-index:20}
-@media(max-width:800px){.links{display:none}.heroin{grid-template-columns:1fr;padding-top:48px}.hero h1{font-size:36px}.grid{grid-template-columns:1fr}.section{padding:48px 18px}}
-</style>
-</head>
-<body>
-<nav class="nav"><div class="navin"><div class="brand">Rudra <span>Career Care</span></div><div class="links"><a href="#universities">Universities</a><a href="#courses">Courses</a><a href="#about">About</a><a href="#contact">Contact</a></div><a class="btn" href="#enquiry">Apply Now</a></div></nav>
-<header class="hero"><div class="heroin">
-<div><span class="eyebrow">ADMISSIONS OPEN • 2026</span><h1>Choose the right university. Build your future.</h1><p>Get professional admission guidance for regular and distance programmes. Explore universities, courses, eligibility and admission support with Rudra Career Care.</p><a class="btn" href="#enquiry">Start Your Admission</a></div>
-<div class="heroCard" id="enquiry"><h3>Free Admission Enquiry</h3><p style="color:#64748b;font-size:13px">Share your details and our counsellor will contact you.</p>
-<form onsubmit="submitLead(event)"><input class="field" id="name" required placeholder="Full Name"><input class="field" id="phone" required placeholder="Mobile Number"><select class="field" id="course"><option>Choose Course</option><option>BA</option><option>B.Com</option><option>MBA</option><option>MCA</option><option>Other</option></select><button class="btn" style="width:100%">Submit Enquiry</button></form></div>
-</div></header>
-<section class="section" id="universities"><h2>Featured Universities</h2><p class="sub">Explore admission options through Rudra Career Care.</p><div class="grid" id="uniGrid"></div></section>
-<section class="section why"><h2>Why Rudra Career Care?</h2><p class="sub">Simple, transparent and student-focused admission assistance.</p><div class="grid"><div class="card"><h3>🎓 Course Guidance</h3><p>Understand courses, eligibility and career direction before applying.</p></div><div class="card"><h3>📄 Admission Support</h3><p>Get step-by-step help with documents and application processes.</p></div><div class="card"><h3>📞 Personal Counselling</h3><p>Speak directly with our admission support team on WhatsApp or phone.</p></div></div></section>
-<section class="section" id="courses"><h2>Popular Courses</h2><p class="sub">Choose from popular undergraduate and postgraduate programmes.</p><div class="grid" id="courseGrid"></div></section>
-<section class="section" id="about"><h2>About Us</h2><p class="sub">Rudra Career Care helps students compare admission options and connect with suitable universities and programmes.</p></section>
-<section class="section contact" id="contact"><h2>Ready to take the next step?</h2><p class="sub">Call or WhatsApp us for admission guidance.</p><div class="contactBox"><a class="btn" href="tel:+919354118812">📞 93541 18812</a><a class="btn wa" href="https://wa.me/919354118812" target="_blank">WhatsApp Us</a></div></section>
-<footer class="footer">© 2026 Rudra Career Care • Admission & Career Guidance</footer>
-<a class="float" href="https://wa.me/919354118812" target="_blank">💬 WhatsApp</a>
-<script>
-const defaultData={universities:[const defaultData={universities:[
-{name:"CCS UNIVERSITY",mode:"Regular Mode",desc:"UG & PG programmes with admission guidance and support."},
-{name:"HRIT UNIVERSITY",mode:"Regular Mode",desc:"Explore career-focused programmes with complete admission assistance."},
-{name:"VISVESVARAYA UNIVERSITY",mode:"Regular Mode",desc:"Explore UG & PG admission options with professional guidance."}],
-{name:"IIMT University",mode:"Distance / Online",desc:"Explore UG & PG admission options."},
-{name:"Sardar Patel University",mode:"Regular / Distance",desc:"Multiple programmes and admission support."},
-{name:"Gyanveer University",mode:"Regular / Distance",desc:"Career-focused programme options."}],
-courses:[{name:"BA",meta:"Undergraduate"},{name:"B.Com",meta:"Undergraduate"},{name:"MBA",meta:"Postgraduate"},{name:"MCA",meta:"Postgraduate"},{name:"BBA",meta:"Undergraduate"},{name:"MA",meta:"Postgraduate"}]};
-let data=JSON.parse(localStorage.getItem("rccData")||"null")||defaultData;
-function render(){document.getElementById("uniGrid").innerHTML=data.universities.map(x=>`<div class="card"><span class="pill">${x.mode}</span><h3>${x.name}</h3><p>${x.desc}</p><a class="btn" href="#enquiry">Enquire Now</a></div>`).join("");document.getElementById("courseGrid").innerHTML=data.courses.map(x=>`<div class="card"><span class="pill">${x.meta}</span><h3>${x.name}</h3><p>Admission guidance and application support available.</p><a class="btn" href="#enquiry">Enquire</a></div>`).join("")}
-function submitLead(e){e.preventDefault();let leads=JSON.parse(localStorage.getItem("rccLeads")||"[]");leads.unshift({name:name.value,phone:phone.value,course:course.value,date:new Date().toLocaleString()});localStorage.setItem("rccLeads",JSON.stringify(leads));alert("Thank you! Rudra Career Care will contact you soon.");e.target.reset()}
-render();
-</script></body></html>
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  color:#10233f;
+  background:#f7faff
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fff;
+  border-bottom:1px solid #e7edf5
+}
+
+.navin{
+  max-width:1180px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+
+.brand{
+  font-size:21px;
+  font-weight:800;
+  color:#123f83
+}
+
+.brand span{
+  color:#f28c28
+}
+
+.links{
+  display:flex;
+  gap:24px;
+  font-size:14px;
+  font-weight:600
+}
+
+.btn{
+  background:#1260c9;
+  color:white;
+  padding:12px 18px;
+  border-radius:10px;
+  border:0;
+  font-weight:700;
+  cursor:pointer;
+  display:inline-block
+}
+
+.hero{
+  background:linear-gradient(135deg,#0c3978,#1268d4);
+  color:#fff
+}
+
+.heroin{
+  max-width:1180px;
+  margin:auto;
+  padding:72px 20px 78px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+
+
+.eyebrow{
+  display:inline-block;
+  background:#ffffff1c;
+  border:1px solid #ffffff35;
+  padding:7px 11px;
+  border-radius:99px;
+  font-size:12px;
+  font-weight:700
+}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.08;
+  margin:18px 0
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.7;
+  color:#dcecff;
+  max-width:650px
+}
+
+.heroCard{
+  background:#fff;
+  color:#10233f;
+  border-radius:20px;
+  padding:26px;
+  box-shadow:0 20px 60px #001f4d55
+}
+
+.heroCard h3{
+  margin-top:0
+}
+
+.field{
+  width:100%;
+  padding:13px;
+  border:1px solid #d8e0eb;
+  border-radius:9px;
+  margin:6px 0 12px;
+  font:inherit
+}
+
+.section{
+  max-width:1180px;
+  margin:auto;
+  padding:62px 20px
+}
+
+.section h2{
+  text-align:center;
+  font-size:30px;
+  margin:0 0 10px
+}
+
+.sub{
+  text-align:center;
+  color:#64748b;
+  margin:0 auto 32px;
+  max-width:650px
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e6edf6;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 8px 25px #163a6410
+}
+
+.card h3{
+  margin:0 0 8px
+}
+
+.card p{
+  line-height:1.6
