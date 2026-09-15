@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rudra Career Care Admin</title>
+<style>body{font-family:Inter,Arial;margin:0;background:#f4f7fb;color:#14213d}.top{background:#0c3978;color:#fff;padding:18px 22px;font-weight:800}.wrap{max-width:1050px;margin:25px auto;padding:0 16px}.panel{background:#fff;border-radius:14px;padding:20px;margin-bottom:20px;border:1px solid #e4eaf2}.field{padding:11px;border:1px solid #d5ddea;border-radius:8px;width:100%;margin:5px 0 10px;box-sizing:border-box}.btn{padding:10px 14px;background:#1260c9;color:#fff;border:0;border-radius:8px;font-weight:700;cursor:pointer}.danger{background:#d43d3d}.item{padding:13px 0;border-bottom:1px solid #e8edf4}.hidden{display:none}.login{max-width:400px;margin:80px auto}.muted{color:#667085;font-size:13px}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:9px;border-bottom:1px solid #e8edf4}</style></head>
+<body><div class="top">Rudra Career Care — Admin Panel</div><div class="wrap">
+<div id="login" class="panel login"><h2>Admin Login</h2><p class="muted">Demo credentials: admin / rudra2026</p><input id="u" class="field" placeholder="Username"><input id="p" type="password" class="field" placeholder="Password"><button class="btn" onclick="login()">Login</button></div>
+<div id="app" class="hidden">
+<div class="panel"><h2>Website Contact</h2><label>Business Name</label><input id="biz" class="field" value="Rudra Career Care"><label>Mobile / WhatsApp</label><input id="mob" class="field" value="9354118812"><button class="btn" onclick="saveContact()">Save Contact</button></div>
+<div class="panel"><h2>Universities</h2><div id="unis"></div><button class="btn" onclick="addUni()">+ Add University</button></div>
+<div class="panel"><h2>Courses</h2><div id="courses"></div><button class="btn" onclick="addCourse()">+ Add Course</button></div>
+<div class="panel"><h2>Admission Enquiries</h2><div id="leads"></div><button class="btn danger" onclick="clearLeads()">Clear Leads</button></div>
+</div></div>
+<script>
+const defaults={universities:[{name:"IIMT University",mode:"Distance / Online",desc:"Explore UG & PG admission options."},{name:"Sardar Patel University",mode:"Regular / Distance",desc:"Multiple programmes and admission support."},{name:"Gyanveer University",mode:"Regular / Distance",desc:"Career-focused programme options."}],courses:[{name:"BA",meta:"Undergraduate"},{name:"B.Com",meta:"Undergraduate"},{name:"MBA",meta:"Postgraduate"},{name:"MCA",meta:"Postgraduate"},{name:"BBA",meta:"Undergraduate"},{name:"MA",meta:"Postgraduate"}]};
+let d=JSON.parse(localStorage.getItem("rccData")||"null")||defaults;
+function login(){if(u.value==="admin"&&p.value==="rudra2026"){loginBox();}else alert("Wrong login");}
+function loginBox(){document.getElementById("login").classList.add("hidden");document.getElementById("app").classList.remove("hidden");render()}
+function persist(){localStorage.setItem("rccData",JSON.stringify(d))}
+function render(){unis.innerHTML=d.universities.map((x,i)=>`<div class=item><input class=field value="${x.name}" onchange="d.universities[${i}].name=this.value"><input class=field value="${x.mode}" onchange="d.universities[${i}].mode=this.value"><input class=field value="${x.desc}" onchange="d.universities[${i}].desc=this.value"><button class="btn" onclick="persist();render()">Save</button> <button class="btn danger" onclick="d.universities.splice(${i},1);persist();render()">Delete</button></div>`).join("");
+courses.innerHTML=d.courses.map((x,i)=>`<div class=item><input class=field value="${x.name}" onchange="d.courses[${i}].name=this.value"><input class=field value="${x.meta}" onchange="d.courses[${i}].meta=this.value"><button class=btn onclick="persist();render()">Save</button> <button class="btn danger" onclick="d.courses.splice(${i},1);persist();render()">Delete</button></div>`).join("");
+let l=JSON.parse(localStorage.getItem("rccLeads")||"[]");leads.innerHTML=l.length?`<table><tr><th>Name</th><th>Phone</th><th>Course</th><th>Date</th></tr>${l.map(x=>`<tr><td>${x.name}</td><td><a href="tel:${x.phone}">${x.phone}</a></td><td>${x.course}</td><td>${x.date}</td></tr>`).join("")}</table>`:"<p class=muted>No enquiries yet.</p>"}
+function addUni(){d.universities.push({name:"New University",mode:"Regular",desc:"Add university details.");persist();render()}
+function addCourse(){d.courses.push({name:"New Course",meta:"Undergraduate"});persist();render()}
+function saveContact(){localStorage.setItem("rccContact",JSON.stringify({biz:biz.value,mob:mob.value}));alert("Saved")}
+function clearLeads(){if(confirm("Clear all leads?")){localStorage.removeItem("rccLeads");render()}}
+</script></body></html>
